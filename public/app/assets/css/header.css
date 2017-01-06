@@ -1,0 +1,46 @@
+@charset"utf-8";
+
+header {
+    overflow: hidden;
+    display: block;
+    -webkit-box-sizing: border-box;
+    height: 44px;
+    line-height: 44px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+header {
+    background: #fff;
+}
+header a {
+    display: block;
+    height: 44px;
+    width: 44px;
+    text-align: center;
+    color: #ffffff;
+}
+header h1 {
+    position: absolute;
+    left: 44px;
+    right: 44px;
+    text-align: center;
+    top: 0;
+    font-size: 16px;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+}
+header a:nth-child(1) {
+    position: absolute;
+    left: 0;
+    text-indent: 18px;
+    line-height: 44px;
+    width: 44px;
+}
+header a:nth-child(3) {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

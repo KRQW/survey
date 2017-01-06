@@ -1,0 +1,20 @@
+@charset"utf-8";
+.index{
+}
+.index .list{
+	
+    margin-left: 15px;
+    padding: 10px 0;
+}.index .list-body{
+	
+}
+.index .list-body h1{
+    font-size: 16px;
+    line-height: 25px;
+	
+}
+.index .list-body .time{
+    font-size: 12px;
+    margin-top: 10px;
+
+}
