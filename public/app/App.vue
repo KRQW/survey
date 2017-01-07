@@ -1,11 +1,13 @@
 <style>
-	@import "./assets/css/base.css"
+	@import "./assets/css/base.css";
 </style>
 
 <template>
 
 <div class="view">
-	<router-view></router-view>
+	<transition>
+		<router-view></router-view>
+	</transition>
 </div>
 
 </template>

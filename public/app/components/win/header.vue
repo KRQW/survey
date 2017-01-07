@@ -1,6 +1,6 @@
 
 <style>
-	@import "../../assets/css/header.css"
+	@import "../../assets/css/header.css";
 </style>
 
 <template>

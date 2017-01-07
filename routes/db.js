@@ -3,26 +3,30 @@ var mysql = require('mysql'),
     pool = mysql.createPool(config.local);
 
 exports.exeSql = function(sql,cb){
+  try {
 
-  pool.getConnection(function (err, connection) {
+    pool.getConnection(function (err, connection) {
 
-    var p = sql.params || null;
+      var p = sql.params || null;
 
-    if(p)console.log('exeSql params: ' + JSON.stringify(p));
-    var query = connection.query(sql.query, p, function (err, result) {
-      if(err){
-        console.log('exeSql err: ' + err.message);
-        if(cb)cb(err, result);
-      }else{
-        if(cb)cb(false, result);
-      }
+      if(p)console.log('exeSql params: ' + JSON.stringify(p));
+      var query = connection.query(sql.query, p, function (err, result) {
+        if(err){
+          console.log('exeSql err: ' + err.message);
+          if(cb)cb(err, result);
+        }else{
+          if(cb)cb(false, result);
+        }
 
+      });
+      console.log('exeSql sql: ' + query.sql);
+      connection.release();
     });
-    console.log('exeSql sql: ' + query.sql);
-    connection.release();
-  });
-};
+  }catch (e){
+    console.log(e.message)
+  }
 
+};
 exports.exeResult = {
   /***
    *

@@ -1,20 +1,30 @@
 @charset"utf-8";
 .index{
 }
-.index .list{
-	
+.index .item{	
     margin-left: 15px;
     padding: 10px 0;
-}.index .list-body{
+}.index .item-body{
 	
 }
-.index .list-body h1{
-    font-size: 16px;
-    line-height: 25px;
-	
+.index .item-body h1{
+    font-size: 14px;
+    line-height: 25px;	
 }
-.index .list-body .time{
-    font-size: 12px;
-    margin-top: 10px;
+.index .item-body .time{
+    margin-top: 5px;
+    color: #bbb;
+}
+.index .arrow-left:before{
+    top: 30px;
+}
 
+.index .list > a:nth-child(1){
+
+}
+
+.list-loaded{
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
 }

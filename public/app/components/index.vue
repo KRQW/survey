@@ -1,17 +1,20 @@
 <style>
-	@import "../assets/css/index.css"
+	@import "../assets/css/index.css";
 </style>
 
 <template>
 
 <div class="index">
 	<pageHeader :pageHeader="pageHeader"></pageHeader>
-  <router-link class="list b-down" v-for="item in dataList" :to="{ name : 'detail' , params : { id :  item.id }}">
-    <div class="list-body">
-      <h1>{{ item.title }}</h1>
-      <div class="time">{{ item.startTime }}</div>
-    </div>
-  </router-link>
+  <div class="list">
+    <router-link class="item b-down arrow-left" v-for="item in dataList" :to="{ name : 'detail' , params : { id :  item.id }}">
+      <div class="item-body">
+        <h1>{{ item.title }}</h1>
+        <div class="time">{{ item.createdTime }}</div>
+      </div>
+    </router-link>
+    <div class="list-loaded">没有更多了</div>
+  </div>
   <loader :class="{ 'on' : !$root.loaded }"></loader>
 </div>
 
