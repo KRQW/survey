@@ -4,7 +4,7 @@
 
 <template>
 
-<div class="index">
+<div class="v-page index">
 	<pageHeader :pageHeader="pageHeader"></pageHeader>
   <div class="list">
     <router-link class="item b-down arrow-left" v-for="item in dataList" :to="{ name : 'detail' , params : { id :  item.id }}">

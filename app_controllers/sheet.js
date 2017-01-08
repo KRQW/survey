@@ -10,10 +10,10 @@ var _sheet = {
         });
     },find : function(req, res){
         db.exeSql({
-            query : sql.list,
+            query : sql.find,
             params : req.params.id
         }, function(err, result){
-            db.exeResult.get(res,err,result);
+            db.exeResult.get(res,err,result[0]);
         });
     }
 };

@@ -1,0 +1,91 @@
+.v-form{
+    margin: 20px;
+}
+.v-form-inner{
+
+}
+input, textarea {
+    background: transparent;
+    font-family: 'Microsoft Yahei';
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type="radio"]:checked:after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #858585;
+    border-radius: 100%;
+    margin: 4px;
+}
+input[type="checkbox"]:checked:after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: 3px solid #6c6c6c;
+    transform: rotate(42deg);
+    -webkit-transform: rotate(42deg);
+    border-left-style: none;
+    border-top-style: none;
+    left: 5px;
+    top: 2px;
+}
+input[type="checkbox"],input[type="radio"]{
+    margin-right: 5px;
+}
+
+.v-form-title.requi:after{
+    content: '*';
+    font-weight: 700;
+    color: #f00;
+    margin-left: 5px;
+    font-size: 12px
+}
+.v-form-title{
+    font-size: 14px;
+    color: #333333;
+}
+.v-form-box ,.v-form-item{
+    margin: 15px 0;
+}
+.v-form-box {
+    border: 1px solid #c6c6c6;
+    border-radius: 2px;
+    display: -webkit-box;
+    display: box;
+    padding: 10px 0;
+}
+.v-form-item > label {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.v-form-box > *{
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.v-form-h1 {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 0 15px 0;
+}
+.v-form-col .v-form-el{
+    font-size: 14px;
+    background: transparent;
+    display: block;
+    margin: 0 3px;
+}
+.v-form-item input{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c6c6c6;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 2px;
+}
+.v-form-item input[type="radio"] {
+    border-radius: 100%;
+}
