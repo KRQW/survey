@@ -118,8 +118,30 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
+#### 4. Class 与 Style 绑定
 
+``` bash
+html
 
+<div v-bind:class="{ 'active' : isActive }"></div> <!-- { '类名' : 条件 } -->
+
+```
+
+``` bash
+js
+
+data: {
+  isActive: true
+}
+
+```
+
+``` bash
+结果
+<div class="static active"></div>
+
+```
+[官网介绍](http://doc.vue-js.com/v2/guide/class-and-style.html)  
 
 
 
