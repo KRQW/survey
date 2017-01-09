@@ -69,7 +69,7 @@
 
 # 接下来重点介绍vue2.0项目中常用模块
 
-[官网文档](http://doc.vue-js.com/v2/guide/) 
+[VUE2.0官网文档](http://doc.vue-js.com/v2/guide/) 
 
 
 #### 1. 安装
@@ -93,10 +93,9 @@ vue init webpack-simple your-projec-name
 #### 3. 数据绑定
 
 
-``` bash
 
 html
-
+``` bash
 <div id="app-6">
   <p>{{ message }}</p>
   <input v-model="message"> <!-- message为input的model 输入值自动改变message内容 -->
@@ -104,10 +103,8 @@ html
 
 ``` 
 
-``` bash
-
 js
-
+``` bash
 var app6 = new Vue({
   el: '#app-6',
   data: {
@@ -123,32 +120,27 @@ var app6 = new Vue({
 
 #### 4. Class 与 Style 绑定
 
-``` bash
 html
-
+``` bash
 <div v-bind:class="{ 'active' : isActive }"></div> <!-- { '类名' : 条件 } -->
-
 ```
 
-``` bash
 js
-
+``` bash
 data: {
   isActive: true
 }
-
 ```
 
-``` bash
 结果
+``` bash
 <div class="static active"></div>
-
 ```
 
 #### 4. 条件渲染 [官网介绍]
 
-``` bash
 html
+``` bash
 <h1 v-if="ok">Yes</h1> <!-- v-if="ok == true" 这里和js语法相同 -->
 
 or 添加一个 “else” 块：
@@ -158,9 +150,8 @@ or 添加一个 “else” 块：
 
 ```
 
-``` bash
 js
-
+``` bash
 data: {
   ok : true
 }
