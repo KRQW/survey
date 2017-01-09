@@ -83,9 +83,9 @@ vue init webpack-simple your-projec-name
 
 ```
 
-#### 2. 国际惯例先介绍下什么是 Vue？
+#### 2. 国际惯例先介绍下什么是 Vue？[官网介绍](http://doc.vue-js.com/v2/guide/#Vue-js-是什么)  
 
-* 就是一个web前端框架，适用于中小型项目，特点是数据绑定、组件化等，[官网介绍](http://doc.vue-js.com/v2/guide/#Vue-js-是什么)  
+* 就是一个web前端框架，适用于中小型项目，特点是数据绑定、组件化等
 
 #### 3. 数据绑定
 
@@ -118,7 +118,7 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
-#### 4. Class 与 Style 绑定
+#### 4. Class 与 Style 绑定 [官网介绍](http://doc.vue-js.com/v2/guide/class-and-style.html)  
 
 ``` bash
 html
@@ -141,8 +141,26 @@ data: {
 <div class="static active"></div>
 
 ```
-[官网介绍](http://doc.vue-js.com/v2/guide/class-and-style.html)  
 
+#### 4. 条件渲染 [官网介绍](http://doc.vue-js.com/v2/guide/conditional.html#v-if) 
 
+``` bash
+html
+<h1 v-if="ok">Yes</h1> <!-- v-if="ok == true" 这里和js语法相同 -->
 
+or 添加一个 “else” 块：
+
+<h1 v-if="ok">Yes</h1>
+<h1 v-else>No</h1>   <!--需要注意的是 v-else 必须紧跟上一个兄弟元素才有效 -->
+
+```
+
+``` bash
+js
+
+data: {
+  ok : true
+}
+
+```
 
