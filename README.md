@@ -72,7 +72,7 @@
 [vue2.0官网文档](http://doc.vue-js.com/v2/guide/) 
 
 
-#### 1. 安装
+### 1. 安装
 
 ``` bash
 # 安装webpack
@@ -86,13 +86,13 @@ vue init webpack-simple your-projec-name
 
 ```
 
-#### 2. 国际惯例先介绍下什么是 Vue？
+### 2. 国际惯例先介绍下什么是 Vue？
 
 * 就是一个web前端框架;
 * 适用于中小型项目;
 * 特点是数据绑定、组件化等;
 
-#### 3. 数据绑定
+### 3. 数据绑定
 
 
 
@@ -120,7 +120,7 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
-#### 4. Class 与 Style 绑定
+### 4. Class 与 Style 绑定
 
 > class
 
@@ -161,7 +161,7 @@ data: {
 
 
 
-#### 4. 条件渲染
+### 4. 条件渲染
 
 html
 ``` bash
@@ -181,7 +181,7 @@ data: {
 }
 
 ```
-#### 5. 列表渲染
+### 5. 列表渲染
 
 > 基本语法
 
@@ -229,4 +229,30 @@ var example1 = new Vue({
 })
 
 ```
+
+### 6. 事件处理器
+
+html
+``` bash
+<div id="example-1">
+  <button v-on:click="counter += 1">增加 1</button> <!-- v-on:click可以用简写 @click="counter += 1" -->
+  <p>这个按钮被点击了 {{ counter }} 次。</p>
+</div>
+
+```
+
+js
+``` bash
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+
+```
+
+
+
+
 
