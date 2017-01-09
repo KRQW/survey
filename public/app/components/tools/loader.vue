@@ -4,10 +4,19 @@
 
 <template>
 
-<div class="load" id="jLoad">
-    <div class="load-container load1 loadOverall">
-        <div class="loader"></div>
-    </div>
+<div id="ajax-loading-screen">
+	<div class="loading-icon"> 
+		<div class="material-icon">
+			<div class="spinner">
+				<div class="right-side"><div class="bar"></div></div>
+				<div class="left-side"><div class="bar"></div></div>
+			</div>
+			<div class="spinner color-2">
+				<div class="right-side"><div class="bar"></div></div>
+				<div class="left-side"><div class="bar"></div></div>
+			</div>
+		</div> 
+	</div>
 </div>
 
 </template>
@@ -16,8 +25,8 @@
 
 export default {
 	mounted (){
-		$('#jLoad').one('animationend webkitAnimationEnd', function() {
-			$(this).remove();
+		$('#ajax-loading-screen').one('animationend webkitAnimationEnd', function() {
+			//$(this).remove();
 		})//.off('click').remove();
 	}
 }

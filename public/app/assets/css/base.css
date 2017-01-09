@@ -145,7 +145,6 @@ html,body,.view{
     -webkit-tap-highlight-color: rgba(0, 0, 0, .3);
 }
 
-
 /************* icon ***************/
 .view .arrow-left:before {
     content: '';
@@ -161,12 +160,21 @@ html,body,.view{
     top: 23px;
     right: 25px;
 }
-.clear_val:before, .clear_val:after {
+.clear_val {
+    border-radius: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #CCC;
+    position: relative;
+    margin: 10px 5px;
+}
+.clear_val:before,.clear_val:after {
     content: '';
     height: 2px;
     width: 12px;
     display: block;
-    background: #FFFFFF;
+    background: #fff;
     position: absolute;
     top: 9px;
     left: 4px;
@@ -176,4 +184,42 @@ html,body,.view{
 .clear_val:after {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+.iback1:before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    display: block;
+    border: 2px solid #ddd;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.iback:before {
+    content: '';
+    height: 8px;
+    width: 8px;
+    display: block;
+    border: 2px solid #6c6c6c;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    top: 17px;
+    left: 12px;
+}
+.iback:after {
+    content: '';
+    height: 2px;
+    width: 15px;
+    display: block;
+    background: #6c6c6c;
+    position: absolute;
+    top: 21px;
+    left: 13px;
 }

@@ -6,9 +6,10 @@
 <template>
 
 <header class="b-down">
-	<a href="javascript:;">{{ $root.pageHeader.leftTitle || '' }}</a>
+	<a :class="$root.pageHeader.left.icon" 
+		:href="$root.pageHeader.left.url || 'javascript:;'">{{ $root.pageHeader.leftTitle || '' }}</a>
 	<h1> {{ $root.pageHeader.title }} </h1>
-	<a href="javascript:;">{{ $root.pageHeader.rightTitle || '' }}</a>
+	<a href="javascript:;">{{ $root.pageHeader.right.title || '' }}</a>
 </header>
 
 </template>

@@ -27,9 +27,22 @@
 <template>
 
 <div class="view">
+    <loader v-if="$root.loaded"></loader>
 	<transition name="slide-fade">
 		<router-view></router-view>
 	</transition>
 </div>
 
 </template>
+
+<script>
+
+import loader from './components/tools/loader.vue'
+
+export default {
+    components:{
+    	loader
+    }
+}
+    
+</script>

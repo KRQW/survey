@@ -32,8 +32,15 @@ new Vue({
 		return {
 	    	pageHeader : {
 	    		title : '',
-	    		leftTitle : '',
-	    		rightTitle : ''
+	    		left :{
+	    			title :'',
+	    			icon : '',
+	    			url : ''
+	    		},right : {
+	    			title : '',
+	    			icon : '',
+	    			url : ''
+	    		}
 	    	},
       		loaded : true
     	}

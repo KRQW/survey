@@ -9,7 +9,13 @@
 }
 .index .item-body h1{
     font-size: 14px;
-    line-height: 25px;	
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 46px;
+    word-wrap: break-word;
+    word-break: break-all;	
 }
 .index .item-body .time{
     margin-top: 5px;

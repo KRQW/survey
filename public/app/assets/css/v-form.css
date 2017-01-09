@@ -14,24 +14,24 @@ input, textarea {
 input[type="radio"]:checked:after{
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #858585;
+    width: 8px;
+    height: 8px;
+    background: #6c6c6c;
     border-radius: 100%;
     margin: 4px;
 }
 input[type="checkbox"]:checked:after{
     content: '';
     position: absolute;
-    width: 5px;
-    height: 10px;
+    width: 4px;
+    height: 8px;
     border: 3px solid #6c6c6c;
     transform: rotate(42deg);
     -webkit-transform: rotate(42deg);
     border-left-style: none;
     border-top-style: none;
-    left: 5px;
-    top: 2px;
+    left: 4px;
+    top: 1px;
 }
 input[type="checkbox"],input[type="radio"]{
     margin-right: 5px;
@@ -44,9 +44,25 @@ input[type="checkbox"],input[type="radio"]{
     margin-left: 5px;
     font-size: 12px
 }
+.v-form-title:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #6c6c6c;
+    display: block;
+    height: 15px;
+    margin: 13px 0;
+}
 .v-form-title{
     font-size: 14px;
-    color: #333333;
+    color: #333;
+    position: relative;
+    text-indent: 5px;
+    background: #f7f7f7;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    padding: 0 5px;
 }
 .v-form-box ,.v-form-item{
     margin: 15px 0;
@@ -56,31 +72,45 @@ input[type="checkbox"],input[type="radio"]{
     border-radius: 2px;
     display: -webkit-box;
     display: box;
-    padding: 10px 0;
+    -webkit-box-flex: 1;
+    box-flex: 1;
 }
 .v-form-item > label {
     display: block;
     font-size: 14px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
-.v-form-box > *{
+.v-form-box > .v-form-el{
+    display: -webkit-box;
+    display: box;
     -webkit-box-flex: 1;
     box-flex: 1;
 }
 .v-form-h1 {
     font-size: 22px;
     text-align: center;
-    padding: 0 0 15px 0;
+    padding: 0 0 20px 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 28px;
+}
+.v-form-col.area .v-form-el{
+    height: auto;
+    padding: 5px 0;
 }
 .v-form-col .v-form-el{
+    padding: 20px 0;
+    border: 0;
+    margin: 0 4px;
+    height: 20px;
+    line-height: 20px;
     font-size: 14px;
     background: transparent;
     display: block;
-    margin: 0 3px;
 }
 .v-form-item input{
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border: 1px solid #c6c6c6;
     vertical-align: middle;
     position: relative;
