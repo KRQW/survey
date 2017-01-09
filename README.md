@@ -67,7 +67,10 @@
 
 ```
 
-## 接下来重点介绍vue2.0
+# 接下来重点介绍vue2.0项目中常用模块
+
+[官网文档](http://doc.vue-js.com/v2/guide/) 
+
 
 #### 1. 安装
 
@@ -83,7 +86,7 @@ vue init webpack-simple your-projec-name
 
 ```
 
-#### 2. 国际惯例先介绍下什么是 Vue？[官网介绍](http://doc.vue-js.com/v2/guide/#Vue-js-是什么)  
+#### 2. 国际惯例先介绍下什么是 Vue？
 
 * 就是一个web前端框架，适用于中小型项目，特点是数据绑定、组件化等
 
@@ -118,7 +121,7 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
-#### 4. Class 与 Style 绑定 [官网介绍](http://doc.vue-js.com/v2/guide/class-and-style.html)  
+#### 4. Class 与 Style 绑定
 
 ``` bash
 html
@@ -142,7 +145,7 @@ data: {
 
 ```
 
-#### 4. 条件渲染 [官网介绍](http://doc.vue-js.com/v2/guide/conditional.html#v-if) 
+#### 4. 条件渲染 [官网介绍]
 
 ``` bash
 html
