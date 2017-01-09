@@ -35,11 +35,11 @@
     │     │   │
     │     │   ├── unit/  公用js
     │     │   │
-    │     │   ├── App.vue： 项目默认vue模板入口
+    │     │   ├── App.vue： 项目入口，根据个人需求做相应修改
     │     │   │
-    │     │   ├── index.html：项目默认静态页面入口
+    │     │   ├── index.html：单页面入口
     │     │   │
-    │     │   ├── main.js：项目默认创建vue主文件
+    │     │   ├── main.js：项目的核心文件，全局的配置
     │     │
     │     │
     │     ├── cms/   后台管理页面
@@ -50,19 +50,62 @@
     │     │   │
     │     │   ├── unit/  公用js
     │     │   │
-    │     │   ├── App.vue： 项目默认vue模板入口
+    │     │   ├── App.vue：  项目入口，根据个人需求做相应修改
     │     │   │
-    │     │   ├── index.html：项目默认静态页面入口
+    │     │   ├── index.html：单页面入口
     │     │   │
-    │     │   ├── main.js：项目默认创建vue主文件
+    │     │   ├── main.js：项目的核心文件，全局的配置
     │     │
     │     ├── node_modules/ vue、webpack 依赖库
     │     │
     │     ├── webpack.config.js:   webpack配置（默认文件）
     │     │
     │     ├── package.json: 前端依赖配置及开发者信息（默认文件）
+    │     │
+    │     ├── dist/   最终发布目录
     │
 
 ```
-## vue 项目常用组件、属性、等介绍
+
+## 接下来重点介绍vue2.0
+
+#### 1. 国际惯例先介绍下什么是 Vue？
+
+* 就是一个web前端框架，适用于中小型项目，特点是数据绑定、组件化等，[官网介绍](http://doc.vue-js.com/v2/guide/#Vue-js-是什么)  
+
+#### 2. 数据绑定
+
+
+``` bash
+
+html
+
+<div id="app-6">
+  <p>{{ message }}</p>
+  <input v-model="message"> <!-- message为input的model 输入值自动改变message值 -->
+</div>
+
+``` 
+
+``` bash
+
+js
+
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+```
+
+> 运行效果图
+
+
+![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
+
+
+
+
 
