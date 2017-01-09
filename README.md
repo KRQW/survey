@@ -69,11 +69,25 @@
 
 ## 接下来重点介绍vue2.0
 
-#### 1. 国际惯例先介绍下什么是 Vue？
+#### 1. 安装
+
+``` bash
+# 安装webpack
+npm install webpack -g
+
+# 安装vue脚手架
+npm install vue-cli -g
+
+# 计入目录后根据模板创建项目
+vue init webpack-simple your-projec-name
+
+```
+
+#### 2. 国际惯例先介绍下什么是 Vue？
 
 * 就是一个web前端框架，适用于中小型项目，特点是数据绑定、组件化等，[官网介绍](http://doc.vue-js.com/v2/guide/#Vue-js-是什么)  
 
-#### 2. 数据绑定
+#### 3. 数据绑定
 
 
 ``` bash
@@ -82,7 +96,7 @@ html
 
 <div id="app-6">
   <p>{{ message }}</p>
-  <input v-model="message"> <!-- message为input的model 输入值自动改变message值 -->
+  <input v-model="message"> <!-- message为input的model 输入值自动改变message内容 -->
 </div>
 
 ``` 
@@ -102,8 +116,9 @@ var app6 = new Vue({
 
 > 运行效果图
 
-
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
+
+
 
 
 
