@@ -120,6 +120,8 @@ var app6 = new Vue({
 
 #### 4. Class 与 Style 绑定
 
+> class
+
 html
 ``` bash
 <div v-bind:class="{ 'active' : isActive }"></div> <!-- { '类名' : 条件 } -->
@@ -131,11 +133,31 @@ data: {
   isActive: true
 }
 ```
-
 结果
 ``` bash
 <div class="static active"></div>
 ```
+
+> style
+
+html
+``` bash
+   <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div> <!-- { 属性 : 值 } -->
+```
+
+js
+``` bash
+data: {
+  activeColor: 'red',
+  fontSize: 30
+}
+```
+结果
+``` bash
+<div style="color:red;font-size:30px"></div>
+```
+
+
 
 #### 4. 条件渲染
 
@@ -160,6 +182,7 @@ data: {
 #### 5. 列表渲染
 
 > 基本语法
+
 
 html
 ``` bash
