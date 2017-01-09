@@ -69,7 +69,7 @@
 
 # 接下来重点介绍vue2.0项目中常用模块
 
-[VUE2.0官网文档](http://doc.vue-js.com/v2/guide/) 
+[vue2.0官网文档](http://doc.vue-js.com/v2/guide/) 
 
 
 #### 1. 安装
@@ -137,7 +137,7 @@ data: {
 <div class="static active"></div>
 ```
 
-#### 4. 条件渲染 [官网介绍]
+#### 4. 条件渲染
 
 html
 ``` bash
@@ -155,6 +155,53 @@ js
 data: {
   ok : true
 }
+
+```
+#### 5. 列表渲染
+
+> 基本语法
+
+html
+``` bash
+<ul id="example-1">
+  <li v-for="item in items">
+    {{ item.message }}
+  </li>
+</ul>
+
+结果
+
+* foo
+* Bar
+
+or
+
+<ul id="example-1">
+  <li v-for="(item,index) in items"> <!-- v-for="(key,索引) in 数组" -->
+    {{index}}. {{ item.message }}
+  </li>
+</ul>
+
+结果
+
+* 1. foo
+* 2. Bar
+
+1.0 版本索引直接使用隐式对象$index
+
+```
+
+js
+``` bash
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      {message: 'foo' },
+      {message: 'Bar' }
+    ]
+  }
+})
 
 ```
 
