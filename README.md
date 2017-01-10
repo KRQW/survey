@@ -330,27 +330,42 @@ var example1 = new Vue({
 
 ```
 
-> 事件修饰
+## 9. slot内容分发
 
+> 在父组件中插入元素属性标记 `slot` 的内容。之后这些内容被分发到子组件的 `slot` 元素中，根据 `name` 属性在子组件中重新组合。
 
+父组件 （当于用jquery这样获取内容$('#Breadcrumbs').html()）
 ``` bash
 
-<!-- 阻止单击事件冒泡 event.stopPropagation() -->
-<a v-on:click.stop="doThis"></a>
+<child>
+<div id="Breadcrumbs" slot="Breadcrumbs">首页 <b> > </b> 子页</div>
+</child>
 
-<!-- 提交事件不再重载页面 event.preventDefault() -->
-<form v-on:submit.prevent="onSubmit"></form>
+```
 
-<!-- 修饰符可以串联  -->
-<a v-on:click.stop.prevent="doThat"></a>
+子组件
+``` bash
 
-<!-- 只有修饰符 -->
-<form v-on:submit.prevent></form>
+<slot name="Breadcrumbs"></slot>
 
-<!-- 添加事件侦听器时使用事件捕获模式 -->
-<div v-on:click.capture="doThis">...</div>
+```
+or 接收子组件内容
 
-<!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
-<div v-on:click.self="doThat">...</div>
+子组件
+``` bash
+
+<slot val="hello from child"></slot>
+
+```
+
+父组件
+``` bash
+
+<child>
+ <template scope="props">
+   <span>hello from parent</span>
+   <span>{{ props.text }}</span>
+ </template>
+</child>
 
 ```
