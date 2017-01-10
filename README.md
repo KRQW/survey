@@ -172,7 +172,7 @@ export default {
 
 ``` 
 
-### 4. 数据绑定
+## 4. 数据绑定
 
 html
 ``` bash
@@ -239,7 +239,7 @@ data: {
 
 
 
-### 6. 条件渲染
+## 6. 条件渲染
 
 html
 ``` bash
@@ -259,7 +259,7 @@ data: {
 }
 
 ```
-### 7. 列表渲染
+## 7. 列表渲染
 
 > 基本语法
 
@@ -308,7 +308,7 @@ var example1 = new Vue({
 
 ```
 
-### 8. 事件处理器
+## 8. 事件处理器
 
 html
 ``` bash
@@ -337,14 +337,19 @@ var example1 = new Vue({
 
 <!-- 阻止单击事件冒泡 event.stopPropagation() -->
 <a v-on:click.stop="doThis"></a>
+
 <!-- 提交事件不再重载页面 event.preventDefault() -->
 <form v-on:submit.prevent="onSubmit"></form>
+
 <!-- 修饰符可以串联  -->
 <a v-on:click.stop.prevent="doThat"></a>
+
 <!-- 只有修饰符 -->
 <form v-on:submit.prevent></form>
+
 <!-- 添加事件侦听器时使用事件捕获模式 -->
 <div v-on:click.capture="doThis">...</div>
+
 <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
 <div v-on:click.self="doThat">...</div>
 
