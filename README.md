@@ -71,8 +71,16 @@
 
 [vue2.0官网文档](http://doc.vue-js.com/v2/guide/) 
 
+## 1. 国际惯例先介绍下什么是 Vue？
 
-### 1. 安装
+* 就是一个web前端框架;
+* 适用于中小型项目;
+* 特点是数据绑定、组件化等;
+* 相比其他框架体积小，学习门槛低
+
+## 2. 安装环境
+
+> 这里默认已安装npm环境，直接安装vue环境
 
 ``` bash
 # 安装webpack
@@ -81,21 +89,34 @@ npm install webpack -g
 # 安装vue脚手架
 npm install vue-cli -g
 
-# 计入目录后根据模板创建项目
-vue init webpack-simple your-projec-name
-
 ```
 
-### 2. 国际惯例先介绍下什么是 Vue？
+## 3. 开始
 
-* 就是一个web前端框架;
-* 适用于中小型项目;
-* 特点是数据绑定、组件化等;
+* 安装simple项目
 
+``` bash
 
-### 3. 开始
+#通过vue脚手架初安装
+vue init webpack-simple my-vue
 
-> 根据个人需求在核心文件中修改
+#进入项目文件
+cd my-vue
+
+#安装依赖
+npm install
+
+# 运行dev 浏览器自动打开 localhost:8080/index.html，恭喜运行成功，开启你的vue之旅
+npm run dev
+
+or 
+
+# 压缩
+npm run build
+
+``` 
+
+* 核心文件
 
 main.js
 ``` bash
@@ -150,7 +171,6 @@ export default {
 </style>
 
 ``` 
-
 
 ### 4. 数据绑定
 
