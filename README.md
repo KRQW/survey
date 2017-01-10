@@ -100,8 +100,8 @@ vue init webpack-simple your-projec-name
 main.js
 ``` bash
 
-var Vue = require('vue');
-var App = require('./App');
+var Vue = require('vue.vue');
+var App = require('./App.vue');
 
 //or ES6
 
@@ -117,16 +117,20 @@ new Vue({
 ``` 
 
 App.vue
+
+> 组件中可以包含css、js、html
+
 ``` bash
 
-<template><!-- 模板 -->
-  <div id="app">  <!-- template下只能有一个入口元素，不能有多个同级元素，否则报错 -->
+<!-- html模板 -->
+<template>
+  <div id="app">  <!-- 每一个template下只能有一个入口元素，不能有多个同级元素 -->
     <home></home> <!-- home组件 -->
   </div>
 </template>
 
-<script><!-- js -->
-
+<!-- js -->
+<script>
 import Home from './components/Home'
 
 export default {
@@ -137,7 +141,8 @@ export default {
 }
 </script>
 
-<style><!-- 样式 -->
+<!-- 样式 -->
+<style>
   body{
    backgorund:#fff;
   }
