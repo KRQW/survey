@@ -9,9 +9,26 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta content="telephone=no" name="format-detection" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
+  <style type="text/css">
+    .loading-icon *{box-sizing: border-box;}#ajax-loading-screen{width:100%;height:100%;position:fixed;top:0;left:0;display:none;z-index:1000000000}#ajax-loading-screen .loading-icon{background-repeat:no-repeat;background-position:center center;display:block;position:absolute;opacity:0;top:0;left:0;width:100%;height:100%}#ajax-loading-screen,#ajax-loading-screen .loading-icon{display:block;opacity:1}.loading-icon .material-icon .spinner{width:50px;height:50px;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto}.loading-icon .material-icon .spinner{-webkit-animation:material-rotate-all 1s linear infinite;animation:material-rotate-all 1s linear infinite}.loading-icon .material-icon .spinner .left-side,.loading-icon .material-icon .spinner .right-side{-webkit-animation:material-fade-in-first 1.2s linear infinite alternate;animation:material-fade-in-first 1.2s linear infinite alternate}.loading-icon .material-icon .spinner.color-2 .left-side,.loading-icon .material-icon .spinner.color-2 .right-side{-webkit-animation:material-fade-in-second 1.2s linear infinite alternate;animation:material-fade-in-second 1.2s linear infinite alternate}.loading-icon .material-icon .left-side,.loading-icon .material-icon .right-side{width:50%;height:100%;position:absolute;top:0;overflow:hidden}.loading-icon .material-icon .left-side{left:0}.loading-icon .material-icon .right-side{right:0}.loading-icon .material-icon .bar{width:100%;height:100%;-webkit-border-radius:200px;border-radius:200px 0 0 200px;border:4px solid #666;position:relative}.loading-icon .material-icon .bar:after{content:"";width:4px;height:4px;display:block;background:#666;position:absolute;-webkit-border-radius:4px;border-radius:4px}.loading-icon .material-icon .right-side .bar{-webkit-border-radius:0;border-radius:0 200px 200px 0;border-left:none;-webkit-transform:rotate(-10deg);-webkit-transform-origin:left center;transform:rotate(-10deg);transform-origin:left center;-webkit-animation:material-rotate-right .75s linear infinite alternate;animation:material-rotate-right .75s linear infinite alternate}.loading-icon .material-icon .right-side .bar:after{bottom:-4px;left:-3px}.loading-icon .material-icon .left-side .bar{border-right:none;-webkit-transform:rotate(10deg);transform:rotate(10deg);-webkit-transform-origin:right center;transform-origin:right center;-webkit-animation:material-rotate-left .75s linear infinite alternate;animation:material-rotate-left .75s linear infinite alternate}.loading-icon .material-icon .left-side .bar:after{bottom:-4px;right:-3px}@-webkit-keyframes material-rotate-left{to{-webkit-transform:rotate(30deg)}from{-webkit-transform:rotate(175deg)}}@-webkit-keyframes material-rotate-right{from{-webkit-transform:rotate(-175deg)}to{-webkit-transform:rotate(-30deg)}}@keyframes material-rotate-left{to{transform:rotate(30deg)}from{transform:rotate(175deg)}}@keyframes material-rotate-right{from{transform:rotate(-175deg)}to{transform:rotate(-30deg)}}@-webkit-keyframes material-rotate-all{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(-360deg)}}@keyframes material-rotate-all{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-webkit-keyframes material-fade-in-first{from{opacity:1}to{opacity:0}}@keyframes material-fade-in-first{from{opacity:1}to{opacity:0}}@-webkit-keyframes material-fade-in-second{from{opacity:0}to{opacity:1}}@keyframes material-fade-in-second{from{opacity:0}to{opacity:1}}.loading-icon .material-icon{top:50%;height:65px;width:65px;position:relative;margin:-32px auto 0 auto;display:block}.loading-icon .material-icon .bar:after{background-color:#000}.loading-icon .material-icon .bar{border-color:#000}#ajax-loading-screen.on{animation:loadon .75s linear;-webkit-animation:loadon .75s linear}@keyframes loadon{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes loadon{0%{opacity:1}100%{opacity:0}}
+  </style>
   </head>
   <body>
     <div class="view" id="app"></div>
+    <div id="ajax-loading-screen" class="alsc">
+      <div class="loading-icon"> 
+        <div class="material-icon">
+          <div class="spinner">
+            <div class="right-side"><div class="bar"></div></div>
+            <div class="left-side"><div class="bar"></div></div>
+          </div>
+          <div class="spinner color-2">
+            <div class="right-side"><div class="bar"></div></div>
+            <div class="left-side"><div class="bar"></div></div>
+          </div>
+        </div> 
+      </div>
+    </div>
     <script src="/dist/js/app.js"></script>
   </body>
 </html>

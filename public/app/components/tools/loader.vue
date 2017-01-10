@@ -1,5 +1,5 @@
 <style>
-    @import '../../assets/css/loader.css';
+    /*@import '../../assets/css/loader.css';*/
 </style>
 
 <template>
@@ -20,15 +20,3 @@
 </div>
 
 </template>
-<script>
-	
-
-export default {
-	mounted (){
-		$('#ajax-loading-screen').one('animationend webkitAnimationEnd', function() {
-			//$(this).remove();
-		})//.off('click').remove();
-	}
-}
-
-</script>

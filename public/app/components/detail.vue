@@ -48,9 +48,17 @@
             </div><!-- textarea -->
             <div v-if="key.type === 'image'" v-for="(key, i) in surveyData.items" class="v-form-col area">
                 <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-box">
-                  
+                <div class="v-form-box up">                  
+                    <a class="plus" href="javascript:;"><span>选择照片</span></a>
+                    <input @change="chooseImg($event)" 
+                    :data-title="key.title" 
+                    accept="image/*" 
+                    class="el" 
+                    data-type="image" 
+                    :data-req="key.required"  
+                    type="file" :id="'eFile'+i" />
                 </div>
+                <div class="pics clearfix"></div>
             </div><!-- file -->
             <div class="v-form-col">
               <a href="javascript:;" :class="{ 'on' : $root.loaded }" @click="subForm" class="btn" >{{ $root.loaded ? '提交中...' : '提交' }}</a>
@@ -62,9 +70,26 @@
 
 <script>
 
+import upImage from '../unit/upload.js'
+
 var _methods = {
   init (){
     this.detail()
+  },chooseImg (e){
+    var vm = this,
+        _img = $(e)[0],
+        efile = $(_img.target);
+        var simg = efile.parent().parent().find('.pics');
+        if(!/image\/\w+/.test(e.target.files[0].type)){
+          alert("请确保文件为图像类型");
+          return;
+        }else{
+            vm.$root.loaded = true;
+            upImage.readFile(efile[0],simg,function(){
+              vm.$root.loaded = false;
+            });
+        }
+
   },subForm (){
     if(this.$root.loaded)return;
       var vm = this,
@@ -102,9 +127,7 @@ var _methods = {
             vm.$root.loaded = false;
             if(0 == res.code){
               alert('提交成功');
-              vm.formData = {
-                box :[]
-              }
+              history.back();
             }else{
               alert('提交失败');
             }

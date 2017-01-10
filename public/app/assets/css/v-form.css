@@ -119,3 +119,126 @@ input[type="checkbox"],input[type="radio"]{
 .v-form-item input[type="radio"] {
     border-radius: 100%;
 }
+
+/****** img *******/
+
+.view .v-form .v-form-box.up .plus {
+    height: 60px;
+    line-height: 88px;
+    border: 1px dashed;
+    text-align: center;
+    border-radius: 3px;
+    color: #909090;
+    z-index: 1;
+    display: block;
+    margin-bottom: 5px;
+    background: #F1F1F1;
+    width: 100%;
+}
+
+.view .v-form .v-form-box.up {
+    position: relative;
+    border: none;
+}
+.view .up .pics {
+    margin: 0;
+}
+.view .pics > div {
+    position: relative;
+    display: inline-block;
+}
+.view .pics a {
+    background: rgba(0, 0, 0, .7);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: absolute;
+    right: -8px;
+    top: -5px;
+    z-index: 99;
+}
+
+.icolse:before,.icolse:after {
+    content: '';
+    height: 2px;
+    width: 15px;
+    display: block;
+    background: #333;
+    position: absolute;
+    top: 18px;
+    left: 13px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.icolse:after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.icolse:before,.icolse:after {
+    top: 10px;
+    left: 5px;
+    background: #fff;
+    width: 12px;
+}
+.view .pics .i:first-child {
+    padding-left:0;
+}
+.view .pics .i:last-child {
+    padding-right:0;
+}
+.view .pics .i:nth-child(2) {
+    padding:5px 0;
+}
+.view .pics .i {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.view .pics .i > div {
+    border: 1px solid #D9DCFB;
+    height: 100px;
+    padding: 2px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    overflow: hidden;
+}
+.view .pics .i > div img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+.view .v-form-box.up input[type="file"] {
+    position: absolute;
+    height: 60px;
+    top: 0;
+    opacity: 0;
+    z-index: 22;
+    width: 100%;
+    left: 0;
+}
+.view .plus {
+    position: relative
+}
+.view .plus:before,.view .plus:after {
+    content: '';
+    height: 3px;
+    width: 21px;
+    display: block;
+    background: #909090;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    margin-left: -10px;
+}
+.view .plus:after {
+    height: 20px;
+    width: 3px;
+    top: 10px;
+    left: 50%;
+    margin-left: -1px;
+}

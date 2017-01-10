@@ -46,3 +46,6 @@ new Vue({
     	}
 	}
 })
+$(function(){
+	$('.alsc').remove();
+})
