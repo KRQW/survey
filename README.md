@@ -92,9 +92,62 @@ vue init webpack-simple your-projec-name
 * 适用于中小型项目;
 * 特点是数据绑定、组件化等;
 
-### 3. 数据绑定
+
+### 3. 开始
+
+> 根据个人需求在核心文件中修改
+
+main.js
+``` bash
+
+var Vue = require('vue');
+var App = require('./App');
+
+//or ES6
+
+import Vue from 'vue'
+import App from './App'
+
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
+
+``` 
+
+App.vue
+``` bash
+
+<template><!-- 模板 -->
+  <div id="app">  <!-- template下只能有一个入口元素，不能有多个同级元素，否则报错 -->
+    <home></home> <!-- home组件 -->
+  </div>
+</template>
+
+<script><!-- js -->
+
+import Home from './components/Home'
+
+export default {
+  name: 'app',
+  components: {
+    Home
+  }
+}
+</script>
+
+<style><!-- 样式 -->
+  body{
+   backgorund:#fff;
+  }
+  @import url("./assets/main.css");
+</style>
+
+``` 
 
 
+### 4. 数据绑定
 
 html
 ``` bash
@@ -120,7 +173,7 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
-### 4. Class 与 Style 绑定
+### 5. Class 与 Style 绑定
 
 > class
 
@@ -161,7 +214,7 @@ data: {
 
 
 
-### 4. 条件渲染
+### 6. 条件渲染
 
 html
 ``` bash
@@ -181,7 +234,7 @@ data: {
 }
 
 ```
-### 5. 列表渲染
+### 7. 列表渲染
 
 > 基本语法
 
@@ -230,7 +283,7 @@ var example1 = new Vue({
 
 ```
 
-### 6. 事件处理器
+### 8. 事件处理器
 
 html
 ``` bash
