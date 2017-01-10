@@ -330,7 +330,12 @@ var example1 = new Vue({
 
 ```
 
-## 9. slot内容分发
+## 9. 组件
+
+
+
+
+## 10. slot内容分发
 
 > 在父组件中插入元素属性标记 `slot` 的内容。之后这些内容被分发到子组件的 `slot` 元素中，根据 `name` 属性在子组件中重新组合。
 
@@ -364,7 +369,7 @@ or 接收子组件内容
 <child>
  <template scope="props">
    <span>hello from parent</span>
-   <span>{{ props.text }}</span>
+   <span>{{ props.val }}</span>
  </template>
 </child>
 
