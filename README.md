@@ -71,8 +71,16 @@
 
 [vue2.0官网文档](http://doc.vue-js.com/v2/guide/) 
 
+## 1. 国际惯例先介绍下什么是 Vue？
 
-### 1. 安装
+* 就是一个web前端框架;
+* 适用于中小型项目;
+* 特点是数据绑定、组件化等;
+* 相比其他框架体积小，学习门槛低
+
+## 2. 安装环境
+
+> 这里默认已安装npm环境，直接安装vue环境
 
 ``` bash
 # 安装webpack
@@ -81,20 +89,90 @@ npm install webpack -g
 # 安装vue脚手架
 npm install vue-cli -g
 
-# 计入目录后根据模板创建项目
-vue init webpack-simple your-projec-name
-
 ```
 
-### 2. 国际惯例先介绍下什么是 Vue？
+## 3. 开始
 
-* 就是一个web前端框架;
-* 适用于中小型项目;
-* 特点是数据绑定、组件化等;
+* 安装simple项目
 
-### 3. 数据绑定
+``` bash
 
+#通过vue脚手架初安装
+vue init webpack-simple my-vue
 
+#进入项目文件
+cd my-vue
+
+#安装依赖
+npm install
+
+# 运行dev 浏览器自动打开 localhost:8080/index.html，恭喜运行成功，开启你的vue之旅
+npm run dev
+
+or 
+
+# 压缩
+npm run build
+
+``` 
+
+* 核心文件
+
+main.js
+``` bash
+
+var Vue = require('vue.vue');
+var App = require('./App.vue');
+
+//or ES6
+
+import Vue from 'vue'
+import App from './App'
+
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
+
+``` 
+
+App.vue
+
+> 组件中可以包含css、js、html
+
+``` bash
+
+<!-- html模板 -->
+<template>
+  <div id="app">  <!-- 每一个template下只能有一个入口元素，不能有多个同级元素 -->
+    <home></home> <!-- home组件 -->
+  </div>
+</template>
+
+<!-- js -->
+<script>
+import Home from './components/Home'
+
+export default {
+  name: 'app',
+  components: {
+    Home
+  }
+}
+</script>
+
+<!-- 样式 -->
+<style>
+  body{
+   backgorund:#fff;
+  }
+  @import url("./assets/main.css");
+</style>
+
+``` 
+
+## 4. 数据绑定
 
 html
 ``` bash
@@ -120,7 +198,7 @@ var app6 = new Vue({
 
 ![res](http://static.open-open.com/lib/uploadImg/20161012/20161012105523_603.png)
 
-### 4. Class 与 Style 绑定
+### 5. Class 与 Style 绑定
 
 > class
 
@@ -161,7 +239,7 @@ data: {
 
 
 
-### 4. 条件渲染
+## 6. 条件渲染
 
 html
 ``` bash
@@ -181,7 +259,7 @@ data: {
 }
 
 ```
-### 5. 列表渲染
+## 7. 列表渲染
 
 > 基本语法
 
@@ -230,7 +308,7 @@ var example1 = new Vue({
 
 ```
 
-### 6. 事件处理器
+## 8. 事件处理器
 
 html
 ``` bash
@@ -259,14 +337,19 @@ var example1 = new Vue({
 
 <!-- 阻止单击事件冒泡 event.stopPropagation() -->
 <a v-on:click.stop="doThis"></a>
+
 <!-- 提交事件不再重载页面 event.preventDefault() -->
 <form v-on:submit.prevent="onSubmit"></form>
+
 <!-- 修饰符可以串联  -->
 <a v-on:click.stop.prevent="doThat"></a>
+
 <!-- 只有修饰符 -->
 <form v-on:submit.prevent></form>
+
 <!-- 添加事件侦听器时使用事件捕获模式 -->
 <div v-on:click.capture="doThis">...</div>
+
 <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
 <div v-on:click.self="doThat">...</div>
 
