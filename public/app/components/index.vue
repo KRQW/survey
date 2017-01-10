@@ -4,7 +4,7 @@
 
 <template>
 
-<div class="v-page index">
+<div class="v-page index" data-view="index">
 	<vHeader :pageHeader="$root.pageHeader"></vHeader>
   <div class="list">
     <router-link class="item b-down arrow-left" v-for="item in dataList" 
@@ -14,7 +14,7 @@
         <div class="time">{{ item.createdTime }}</div>
       </div>
     </router-link>
-    <div class="list-loaded">没有更多了</div>
+    <div v-if="!$root.loaded" class="list-loaded">没有更多了</div>
   </div>
 </div>
 
@@ -26,9 +26,8 @@ import vHeader from './win/header.vue'
 
 var _methods = {
 	init (){
-
-    this.getList(0)
-
+    var vm = this;
+    vm.getList(0)
 	},getList (page){
 
     var vm = this;
@@ -58,14 +57,6 @@ export default {
   },methods : _methods
 }
 
-/*
-
-$("#confetti-btn").click(event => {
-    playTrumpet();
-    fireConfettiCannon();
-});
-
-*/
 </script>
 
 

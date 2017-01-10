@@ -3,7 +3,7 @@
   @import "../assets/css/v-form.css";
 </style>
 <template>
-<div class="v-page detail">
+<div class="v-page detail" data-view="detail">
     <vHeader :pageHeader="$root.pageHeader"></vHeader>
     <div class="v-form">
         <div class="v-form-inner">
@@ -46,6 +46,12 @@
                     :placeholder="'在此输入' + key.title" rows="4" class="v-form-el"></textarea>
                 </div>
             </div><!-- textarea -->
+            <div v-if="key.type === 'image'" v-for="(key, i) in surveyData.items" class="v-form-col area">
+                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
+                <div class="v-form-box">
+                  
+                </div>
+            </div><!-- file -->
             <div class="v-form-col">
               <a href="javascript:;" :class="{ 'on' : $root.loaded }" @click="subForm" class="btn" >{{ $root.loaded ? '提交中...' : '提交' }}</a>
             </div>
