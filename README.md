@@ -332,7 +332,105 @@ var example1 = new Vue({
 
 ## 9. 组件
 
->组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素
+> 组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素
+
+
+* ------------------------------- `hello.vue` 子组件定义 ------------------------------- 
+
+html
+``` bash
+<template>
+<div id="app">
+	<div>A custom component!</div>
+</div>
+</template>
+```
+
+* -------------------------------  父组件引入 ------------------------------- 
+
+js
+``` bash
+
+import hello from './components/tools/hello.vue'
+export default {
+	components:{
+		hello
+	}
+}
+
+```
+
+html
+``` bash
+
+<div id="app">
+<hello></hello>
+</div>
+
+```
+
+父组件结果
+
+``` bash
+<div id="app">
+  <div>A custom component!</div>
+</div>
+
+```
+
+#### 使用 `Props` 传递数据 
+
+> 修改之前的组件
+
+* ------------------------------- `hello.vue` 子组件定义 ------------------------------- 
+
+html
+``` bash
+<template>
+<div id="app">
+	<div>{{ message }}</div>
+</div>
+</template>
+```
+
+js
+``` bash
+export default {
+	props: ['message']
+}
+
+```
+* -------------------------------  父组件引入 ------------------------------- 
+
+js
+``` bash
+
+import hello from './components/tools/hello.vue'
+export default {
+	components:{
+		hello
+	}
+}
+
+```
+
+html
+``` bash
+
+<div id="app">
+	<hello message="hello"></hello>
+</div>
+
+```
+
+子组件结果
+
+``` bash
+<div id="app">
+  <div>hello</div>
+</div>
+
+```
 
 
 ## 10. slot内容分发
@@ -533,8 +631,7 @@ Vue.effect('my-effect', {
 
 ```
 
-js
+html
 ``` bash
 <p v-effect="my-effect"></p>
 ```
-
