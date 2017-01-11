@@ -52,11 +52,11 @@
                     <a class="plus" href="javascript:;"><span>选择照片</span></a>
                     <input @change="chooseImg($event)" 
                     :data-title="key.title" 
-                    accept="image/*" 
                     class="el" 
                     data-type="image" 
                     :data-req="key.required"  
                     type="file" :id="'eFile'+i" />
+                    <!-- accept="image/*"  -->
                 </div>
                 <div class="pics clearfix"></div>
             </div><!-- file -->
