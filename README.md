@@ -386,7 +386,7 @@ npm install vue-router --save
 
 > 使用
 
-* 在核心文件main.js 中新增代码
+* 在核心文件 `main.js` 中新增路由代码
 
 
 ``` bash
@@ -412,7 +412,7 @@ new Vue({
 ```
 
 
-* 修改App.vue,在模版中添加 `router-view` 否则路由不起效
+* 修改 `App.vue` ,在模版中添加 `router-view` 否则路由不起效
 
 ``` bash
 <template>
@@ -420,5 +420,122 @@ new Vue({
 </template>
 ``` 
 
+## 12. 过渡动画
 
-## 12. 过渡
+> 有3种过渡动画方法：
+
+* js 函数
+* css transition
+* css animation
+
+#### CSS Transition
+
+> 要使用 CSS Transition 动画，只需要在目标元素上添加 `v-transition` 指令：
+
+html
+``` bash
+<p class="msg" v-if="show" v-transition>Hello!</p>
+```
+
+> 然后，需要为目标元素定义两个 vue css 类： `.v-enter` 和 `.v-leave` 顾名思义 前者进入的时候执行，后者离开时候执行
+
+css
+``` bash
+.msg {
+    transition: all .3s ease;
+    height: 30px;
+    padding: 10px;
+    background-color: #eee;
+    overflow: hidden;
+}
+.msg.v-enter, .msg.v-leave {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+}
+```
+
+
+#### CSS animation
+
+> CSS Animation 使用方式和 `transition` 大同小异，换成使用 `v-animation` 指令，不同的地方是 `v-enter` 现在不是在插入后立刻移除，而是在侦听到 `animationend` 事件后才移除。
+
+html
+``` bash
+<p class="msg" v-if="show" v-transition>Hello!</p>
+```
+
+> 然后，需要为目标元素定义两个 vue css 类： `.v-enter` 和 `.v-leave` 顾名思义 前者进入的时候执行，后者离开时候执行
+
+html
+``` bash
+<p class="animated" v-if="show" v-animation>Look at me!</p>
+```
+
+
+> CSS 里你需要定义两个动画 `keyframes`，分别对应进场和出场动画：
+
+css
+``` bash
+
+.animated {
+    display: inline-block;
+}
+
+.animated.v-enter {
+    animation: fadein .5s;
+}
+
+.animated.v-leave {
+    animation: fadeout .5s;
+}
+
+@keyframes fadein {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+````
+
+
+#### JavaScript 函数动画
+
+> JS 函数动画需要通过 Vue.effect 方法来注册一个效果，包括一个进场函数和一个出场函数：
+
+js
+``` bash
+Vue.effect('my-effect', {
+    enter: function (el, insert, timeout) {
+        // insert() 会将元素插入 DOM
+    },
+    leave: function (el, remove, timeout) {
+        // remove() 会将元素移除出 DOM
+    }
+})
+
+```
+
+js
+``` bash
+<p v-effect="my-effect"></p>
+```
+
