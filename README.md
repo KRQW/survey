@@ -428,7 +428,7 @@ new Vue({
 * css transition
 * css animation
 
-#### CSS Transition
+#### 1. CSS Transition
 
 > 要使用 CSS Transition 动画，只需要在目标元素上添加 `v-transition` 指令：
 
@@ -456,7 +456,7 @@ css
 ```
 
 
-#### CSS animation
+#### 2. CSS animation
 
 > CSS Animation 使用方式和 `transition` 大同小异，换成使用 `v-animation` 指令，不同的地方是 `v-enter` 现在不是在插入后立刻移除，而是在侦听到 `animationend` 事件后才移除。
 
@@ -514,10 +514,9 @@ css
     }
 }
 
-````
+```
 
-
-#### JavaScript 函数动画
+#### 3. JavaScript 函数动画
 
 > JS 函数动画需要通过 Vue.effect 方法来注册一个效果，包括一个进场函数和一个出场函数：
 
