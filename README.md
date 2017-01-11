@@ -75,8 +75,8 @@
 
 * 就是一个web前端框架;
 * 适用于中小型项目;
-* 特点是数据绑定、组件化、内容分发等;
-* 相比其他框架体积小，学习门槛低
+* 特点是轻量、双向绑定、组件化、指令等;
+* 相比其他框架学习门槛低
 
 ## 2. 安装环境
 
@@ -376,5 +376,49 @@ or 接收子组件内容
 ```
 
 ## 11. 路由
+
+``` bash
+
+#安装
+npm install vue-router --save
+
+```
+
+> 使用
+
+* 在核心文件main.js 中新增代码
+
+
+``` bash
+
+import Vue from 'vue'
+import VueRouter from 'vue-router' 
+Vue.use(VueRouter)
+
+import index from './components/index.vue'
+import detail from './components/detail.vue'
+//定义路由
+const router = new VueRouter({
+  routes: [
+    { name : 'index', path : '/', component : index },
+    { name : 'detail', path : '/detail/:id', component : detail }
+  ]
+})
+
+new Vue({
+	el : '#app',
+	router,
+})
+```
+
+
+* 修改App.vue,在模版中添加 `router-view` 否则路由不起效
+
+``` bash
+<template>
+   <router-view></router-view>
+</template>
+``` 
+
 
 ## 12. 过渡
