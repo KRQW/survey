@@ -42,7 +42,7 @@ new Vue({
 	    			url : ''
 	    		}
 	    	},
-      		loaded : true
+      		loaded : false
     	}
 	}
 })

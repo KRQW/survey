@@ -1,19 +1,9 @@
-<style>
-	
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.navbar {
-  margin-bottom: 20px;
-}
-
-</style>
-
 <template>
-  <div class="index container">
-	<div class="jumbotron">
-		<h2>问卷列表</h2>
+<div class="row">
+  <nav></nav>
+  <sidebar></sidebar>
+  <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
+    <h2>问卷列表</h2>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -31,20 +21,20 @@ body {
             <td>{{ it.createdTime }}</td>
             <td>
               <router-link class="btn btn-blue btn-sm" :to="'resutl/'+it.id" >查看答卷</router-link>
-            	<router-link class="btn btn-warning btn-sm" :to="'operate/'+it.id" >修改</router-link>
-            	<router-link class="btn btn-danger btn-sm" to="/" >删除</router-link>
+              <router-link class="btn btn-warning btn-sm" :to="'operate/'+it.id" >修改</router-link>
+              <router-link class="btn btn-danger btn-sm" to="/" >删除</router-link>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    </div>
   </div>
+</div>
 </template>
 
 <script>
 
-import vHeader from './win/header.vue'
+import sidebar from './win/sidebar.vue'
 
 var _methods = {
 	init (){
@@ -75,7 +65,7 @@ export default {
   	this.init();
 
   },components : {
-  	vHeader
+  	sidebar
   },methods : _methods
 }
 </script>

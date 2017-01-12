@@ -14,7 +14,7 @@
         <div class="time">{{ item.createdTime }}</div>
       </div>
     </router-link>
-    <div v-if="!$root.loaded" class="list-loaded">没有更多了</div>
+    <!-- <div v-if="!$root.loaded" class="list-loaded">没有更多了</div> -->
   </div>
 </div>
 
@@ -36,7 +36,10 @@ var _methods = {
       for(;i <= k -1;i++){
         vm.dataList.push(res.data[i]);
       }
-      vm.$root.loaded = false;
+      setTimeout(function(){
+        $('.list').addClass('on')
+      },200);
+      
     });
   }
 };

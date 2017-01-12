@@ -24,13 +24,60 @@
 .index .arrow-left:before{
     top: 30px;
 }
-
-.index .list > a:nth-child(1){
-
-}
-
 .list-loaded{
     text-align: center;
     padding: 20px;
     color: #aaa;
+}
+.index .list a{
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    opacity: 0;
+    transition: all .425s cubic-bezier(.4,.6,.2,1);
+    -webkit-transition: all .425s cubic-bezier(.4,.6,.2,1)
+}
+.index .list.on a{    
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+.index .list > a:nth-child(1){
+    transition-delay: .1s;
+    -webkit-transition-delay: .1s;
+}
+.index .list > a:nth-child(2){
+    transition-delay: .2s;
+    -webkit-transition-delay: .2s;
+}
+.index .list > a:nth-child(3){
+    transition-delay: .3s;
+    -webkit-transition-delay: .3s;
+}
+.index .list > a:nth-child(4){
+    transition-delay: .4s;
+    -webkit-transition-delay: .4s;
+}
+.index .list > a:nth-child(5){
+    transition-delay: .5s;
+    -webkit-transition-delay: .5s;
+}
+.index .list > a:nth-child(6){
+    transition-delay: .6s;
+    -webkit-transition-delay: .6s;
+}
+.index .list > a:nth-child(7){
+    transition-delay: .7s;
+    -webkit-transition-delay: .7s;
+}
+.index .list > a:nth-child(8){
+    transition-delay: .8s;
+    -webkit-transition-delay: .8s;
+}
+.index .list > a:nth-child(9){
+    transition-delay: .9s;
+    -webkit-transition-delay: .9s;
+}
+.index .list > a:nth-child(10){
+    transition-delay: 1s;
+    -webkit-transition-delay: 1s;
 }
