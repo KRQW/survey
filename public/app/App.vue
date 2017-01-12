@@ -8,6 +8,7 @@
 	.slide-enter-active{
 		transform: translate3d(100%,0,0);
 		-webkit-transform: translate3d(100%,0,0);
+		opacity: 0;
 	}
 	.back.v-page.slide-leave-active,
 	.slide-leave-active{
@@ -19,6 +20,7 @@
 		transform: translate3d(50%,0%,0);
 	}
 	.back.v-page ~ .slide-enter-active{
+		opacity: 0;
 		transform: translate3d(-100%,0,0);
 		-webkit-transform: translate3d(-100%,0,0);
 	}
