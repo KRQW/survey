@@ -635,3 +635,7 @@ html
 ``` bash
 <p v-effect="my-effect"></p>
 ```
+## 13. vuex
+
+> `Vuex` 是一个专为 `Vue.js` 应用开发的状态管理模式，适用于大型单页面项目，如果你感兴趣可以去探索 [vuex官网文档](https://vuex.vuejs.org/zh-cn/installation.html) 
+
