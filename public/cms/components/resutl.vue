@@ -12,6 +12,7 @@
             <thead>
               <tr>
                 <th>序号</th>
+                <th>姓名</th>
                 <th v-for="th in itemsHead">
                   {{ th.q }}
                 </th>
@@ -22,6 +23,7 @@
             <tbody>
               <tr v-for="(it,i) in dataList">
                 <td>{{ (i+1) }}</td>
+                <td>{{ it.uId }}</td>
                 <td v-for="th in it.items">
                   <img v-if="th.a.indexOf('pic:') > -1" :src="'/imgs/'+(th.a.split('pic:')[1])">
                   <div v-else>{{ ((typeof th.a == 'object') ? (th.a+'') : (th.a || '--'))}}</div>

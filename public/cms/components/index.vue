@@ -54,6 +54,8 @@ var _methods = {
 	},getList (page){
 
     var vm = this;
+
+      console.log(_api.list)
     $.get(_api.list + page,function(res){
       var i = 0,k = res.data.length;
       for(;i <= k -1;i++){
