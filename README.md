@@ -332,6 +332,18 @@ var example1 = new Vue({
 
 ## 9. 组件
 
+* 页面组件模板指令及修饰符，常见有：
+	* v-model：类似AngularJS的ng-model，用于数据model双向绑定
+	* v-text：用于更新绑定元素内容，类似jQuery的text()
+	* v-html：用于更新绑定元素的html内容，类似jQuery的html()
+	* v-if：用于判断表达式的条件真假来判定是否渲染元素
+	* v-show：用于判断表达式的条件真假来判定是否显示元素
+	* v-for：遍历数据进行渲染元素或模板
+	* v-on:+方法名：用于元素绑定事件，如v-on:click
+	* @+命名：事件修饰符，用法同v-one如@click
+	* :+命名：属性修饰符，如:alt="图片的alt"
+
+
 > 组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素
 
 
@@ -437,7 +449,7 @@ html
 
 > 在父组件中插入元素属性标记 `slot` 的内容。之后这些内容被分发到子组件的 `slot` 元素中，根据 `name` 属性在子组件中重新组合。
 
-父组件 （当于用jquery这样获取内容$('#Breadcrumbs').html()）
+父组件 （类似jquery获取内容$('#Breadcrumbs').text()）
 ``` bash
 
 <child>
