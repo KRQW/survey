@@ -30,11 +30,11 @@
     color: #aaa;
 }
 .index .list a{
-    transform: translateY(20px);
-    -webkit-transform: translateY(20px);
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
     opacity: 0;
-    transition: all .425s cubic-bezier(.4,.6,.2,1);
-    -webkit-transition: all .425s cubic-bezier(.4,.6,.2,1)
+    transition: all 0.75s ease;
+    -webkit-transition: all 0.75s ease;
 }
 .index .list.on a{    
     transform: translateY(0);

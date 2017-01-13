@@ -143,11 +143,11 @@ html,body,.view{
 /*.view a.on{
     tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
+}*/
 .view a {
     tap-highlight-color: rgba(0, 0, 0, .3);
     -webkit-tap-highlight-color: rgba(0, 0, 0, .3);
-}*/
+}
 .v-page{
     position: absolute;
     left: 0;
