@@ -18,6 +18,7 @@
                   :data-requi="key.required" 
                   :placeholder="'在此输入' + key.title" class="v-form-el"  />
                 </div><!-- text -->
+
                 <div v-if="key.type === 'radio'" class="v-form-item">
                   <label v-for="(it,it_i) in key.items">
                   <input v-model="formData[i]" 
@@ -25,6 +26,7 @@
                   :value="it.title" 
                   :name="'radio'+i" type="radio" /> {{ it.title }}</label>
                 </div><!-- radio -->
+
                 <div v-if="key.type === 'checkbox'" class="v-form-item">
                   <label v-for="(it,it_i) in key.items">
                   <input v-model="formData.box[it_i]" 
@@ -32,11 +34,13 @@
                   :name="'checkbox'+i" 
                   :value="it.title" type="checkbox" /> {{ it.title }}</label>
                 </div><!-- checkbox -->
+
                 <div class="v-form-box area" v-if="key.type === 'textarea'">
                     <textarea v-model="formData[i]" 
                     :data-requi="key.required" 
                     :placeholder="'在此输入' + key.title" rows="4" class="v-form-el"></textarea>
                 </div><!-- textarea -->
+
                 <div v-if="key.type === 'image'">
                   <div class="v-form-box up">
                       <a class="plus" href="javascript:;"><span>选择照片</span></a>
@@ -46,7 +50,6 @@
                       data-type="image" 
                       :data-req="key.required"  
                       type="file" :id="'eFile'+i" />
-                      <!-- accept="image/*"  -->
                   </div>
                   <div class="pics clearfix"></div>
                 </div><!-- image -->
