@@ -449,7 +449,7 @@ html
 
 > 在父组件中插入元素属性标记 `slot` 的内容。之后这些内容被分发到子组件的 `slot` 元素中，根据 `name` 属性在子组件中重新组合。
 
-父组件 （类似jquery获取内容$('#Breadcrumbs').text()）
+父组件 （类似jquery获取内容$('#Breadcrumbs').html()）
 ``` bash
 
 <child>
