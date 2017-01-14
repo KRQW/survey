@@ -10,56 +10,48 @@
             <div class="v-form-col">
                 <div class="v-form-h1">{{ surveyData.title }}</div>
             </div><!-- title -->
-            <div v-if="key.type === 'text'" v-for="(key, i) in surveyData.items" class="v-form-col">
-                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-box">
+            <div v-for="(key, i) in surveyData.items" class="v-form-col">
+
+                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>                
+                <div v-if="key.type === 'text'" class="v-form-box">
                   <input type="text" v-model="formData[i]" 
                   :data-requi="key.required" 
                   :placeholder="'在此输入' + key.title" class="v-form-el"  />
-                </div>
-            </div><!-- text -->
-            <div v-if="key.type === 'radio'" v-for="(key, i) in surveyData.items" class="v-form-col">
-                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-item">
+                </div><!-- text -->
+                <div v-if="key.type === 'radio'" class="v-form-item">
                   <label v-for="(it,it_i) in key.items">
                   <input v-model="formData[i]" 
                   :data-requi="key.required" 
                   :value="it.title" 
                   :name="'radio'+i" type="radio" /> {{ it.title }}</label>
-                </div>
-            </div><!-- radio -->
-            <div v-if="key.type === 'checkbox'" v-for="(key, i) in surveyData.items" class="v-form-col">
-                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-item">
+                </div><!-- radio -->
+                <div v-if="key.type === 'checkbox'" class="v-form-item">
                   <label v-for="(it,it_i) in key.items">
                   <input v-model="formData.box[it_i]" 
                   :data-requi="key.required" 
                   :name="'checkbox'+i" 
                   :value="it.title" type="checkbox" /> {{ it.title }}</label>
-                </div>
-            </div><!-- checkbox -->
-            <div v-if="key.type === 'textarea'" v-for="(key, i) in surveyData.items" class="v-form-col area">
-                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-box">
+                </div><!-- checkbox -->
+                <div class="v-form-box area" v-if="key.type === 'textarea'">
                     <textarea v-model="formData[i]" 
                     :data-requi="key.required" 
                     :placeholder="'在此输入' + key.title" rows="4" class="v-form-el"></textarea>
-                </div>
-            </div><!-- textarea -->
-            <div v-if="key.type === 'image'" v-for="(key, i) in surveyData.items" class="v-form-col area">
-                <div class="v-form-title" :class="{ 'requi' : key.required }">{{ key.title }}：</div>
-                <div class="v-form-box up">                  
-                    <a class="plus" href="javascript:;"><span>选择照片</span></a>
-                    <input @change="chooseImg($event)" 
-                    :data-title="key.title" 
-                    class="el" 
-                    data-type="image" 
-                    :data-req="key.required"  
-                    type="file" :id="'eFile'+i" />
-                    <!-- accept="image/*"  -->
-                </div>
-                <div class="pics clearfix"></div>
-            </div><!-- file -->
+                </div><!-- textarea -->
+                <div v-if="key.type === 'image'">
+                  <div class="v-form-box up">
+                      <a class="plus" href="javascript:;"><span>选择照片</span></a>
+                      <input @change="chooseImg($event)" 
+                      :data-title="key.title" 
+                      class="el" 
+                      data-type="image" 
+                      :data-req="key.required"  
+                      type="file" :id="'eFile'+i" />
+                      <!-- accept="image/*"  -->
+                  </div>
+                  <div class="pics clearfix"></div>
+                </div><!-- image -->
+
+            </div><!-- for -->
             <div class="v-form-col">
               <a href="javascript:;" :class="{ 'on' : $root.loaded }" @click="subForm" class="btn" >{{ $root.loaded ? '提交中...' : '提交' }}</a>
             </div>

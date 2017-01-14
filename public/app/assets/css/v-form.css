@@ -94,7 +94,7 @@ input[type="checkbox"],input[type="radio"]{
     word-wrap: break-word;
     line-height: 28px;
 }
-.v-form-col.area .v-form-el{
+.v-form-box.area .v-form-el{
     height: auto;
     padding: 5px 0;
 }
